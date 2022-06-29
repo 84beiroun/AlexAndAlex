@@ -4,6 +4,7 @@ import './styles/App.css';
 import dropDownLogo from './icons/dropDown1.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PosLine from "./components/PosLine";
+import PosData from "./text_repo/positions.json"
 
 function App() {
   return (
@@ -24,7 +25,20 @@ function App() {
             </div>
         </nav>
         <section className="App-content-container">
-            <PosLine pos={{id: 1, title: "sushie", body: "content"}}/>
+            <div className="Positions">
+                {
+                    PosData
+                        .sort(function (a,b) {
+                            if(a.category.toLowerCase() < b.category.toLowerCase()) return -1;
+                            if(a.category.toLowerCase() > b.category.toLowerCase()) return 1;
+                            return 0;
+                        })
+                        .map((posData) => <div key={posData.id}>
+                        <h2>{posData.category}</h2>
+                        <PosLine pos={posData}/>
+                    </div>)
+                }
+            </div>
         </section>
         <footer className="App-footer">
 

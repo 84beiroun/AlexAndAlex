@@ -1,0 +1,11 @@
+[
+    {"id":"0", "title":"TestPos0", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "1200 руб", "category": "Category1"},
+    {"id":"1", "title":"TestPos1", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "1100 руб", "category": "Category3"},
+    {"id":"2", "title":"TestPos2", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "750 руб", "category": "Category2"},
+    {"id":"3", "title":"TestPos3", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "840 руб", "category": "Category1"},
+    {"id":"4", "title":"TestPos4", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "1600 руб", "category": "Category2"},
+    {"id":"5", "title":"TestPos5", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "1800 руб", "category": "Category1"},
+    {"id":"6", "title":"TestPos6", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "600 руб", "category": "Category3"}
+
+]
+
