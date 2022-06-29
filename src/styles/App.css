@@ -1,0 +1,55 @@
+.Find-logo {
+    height: 25px;
+    max-width: 25px;
+}
+.DropDown-logo {
+    height: 25px;
+    max-width: 25px;
+}
+.App-header {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.RightHeaderSide {
+    height: 25px;
+    display: flex;
+    align-items: center;
+}
+.LeftHeaderSide {
+    height: 25px;
+    display: flex;
+    align-items: center;
+}
+.App-nav-bar {
+    height: 40px;
+    display: block;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    vertical-align: middle;
+}
+.Nav-container {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: visible;
+    vertical-align: middle;
+}
+.Nav-list {
+    flex-wrap: nowrap;
+    display: flex;
+    overflow: auto;
+    align-items: center;
+    justify-content: space-between;
+    vertical-align: middle;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+a {
+    margin-right: 20px;
+}
+.Nav-list::-webkit-scrollbar {
+    display: none;
+}
