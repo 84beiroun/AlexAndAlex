@@ -2,10 +2,18 @@
     {"id":"0", "title":"TestPos0", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "1200 руб", "category": "Category1"},
     {"id":"1", "title":"TestPos1", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "1100 руб", "category": "Category3"},
     {"id":"2", "title":"TestPos2", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "750 руб", "category": "Category2"},
-    {"id":"3", "title":"TestPos3", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "840 руб", "category": "Category1"},
+    {"id":"3", "title":"TestPos3", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "840 руб", "category": "Category4"},
     {"id":"4", "title":"TestPos4", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "1600 руб", "category": "Category2"},
     {"id":"5", "title":"TestPos5", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "1800 руб", "category": "Category1"},
-    {"id":"6", "title":"TestPos6", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "600 руб", "category": "Category3"}
+    {"id":"6", "title":"TestPos6", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "600 руб", "category": "Category3"},
+    {"id":"7", "title":"TestPos7", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "744 руб", "category": "Category4"},
+    {"id":"8", "title":"TestPos8", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "1334 руб", "category": "Category2"},
+    {"id":"9", "title":"TestPos9", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "422 руб", "category": "Category1"},
+    {"id":"10", "title":"TestPos10", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "866 руб", "category": "Category3"},
+    {"id":"11", "title":"TestPos11", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "3111 руб", "category": "Category5"},
+    {"id":"12", "title":"TestPos12", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "6655 руб", "category": "Category3"},
+    {"id":"13", "title":"TestPos13", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "1411 руб", "category": "Category6"},
+    {"id":"14", "title":"TestPos14", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "232 руб", "category": "Category3"}
 
 ]
 

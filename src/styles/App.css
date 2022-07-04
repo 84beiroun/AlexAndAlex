@@ -28,6 +28,7 @@
     border-top: 1px solid lightgray;
     border-bottom: 1px solid lightgray;
     vertical-align: middle;
+    margin-bottom: 15px;
 }
 .Nav-container {
     height: 40px;
@@ -81,5 +82,31 @@ a {
     display: block;
 }
 .IndivPosDataBot{
-    display: block;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.Nav-el{
+    margin-left: 20px;
+    text-decoration: none;
+    color: black;
+    margin-top: 15px;
+}
+.CategoryName{
+    margin-left: 20px;
+}
+.PriceText{
+    margin-bottom: 5px;
+}
+.AddIcon{
+    height: 25px;
+    max-width: 25px;
+}
+.BodyText{
+    font-size: 12px;
 }
