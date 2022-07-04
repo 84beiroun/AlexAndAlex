@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import findLogo from './icons/find1.png';
 import './styles/App.css';
 import dropDownLogo from './icons/dropDown1.png';
@@ -18,6 +18,15 @@ function App() {
             uniquePos.push(posData.category)
         }
     });
+    const list = [...Array(uniquePos.length).keys()]
+    const refToCategory = list.map(() => useRef(null));
+    const setRefToCategory = idx => () => {
+        const next = refToCategory[idx + 1];
+        if(next){
+            next.current.focus();
+        }
+    };
+    const executeScroll = (event, i) => refToCategory[i].current.scrollIntoView()
   return (
     <div className="App">
         <header className="App-header">
@@ -32,7 +41,7 @@ function App() {
             <div className="Nav-container">
                 <div className="Nav-list">{
                     uniquePos
-                        .map((uniqueData, i) => <p className="Nav-el" key={i} id={"group" + i}>{uniqueData}</p>)
+                        .map((uniqueData, i) => <p className="Nav-el" key={i} onClick={(e) => executeScroll(e, i)}>{uniqueData}</p>)
                 }
                 </div>
             </div>
@@ -41,7 +50,7 @@ function App() {
             <div className="Positions">{
                 uniquePos
                     .map((category, i) => <div key={i}>
-                       <h2 className="CategoryName" id={"category" + i}>{category}</h2>
+                       <h2 className="CategoryName" ref={refToCategory[i]} onChange={setRefToCategory(i)} id={"category" + i}>{category}</h2>
                         {
                             positions
                                 .map((posData) =>
@@ -57,7 +66,6 @@ function App() {
                                 })
                         }
                     </div>)
-
             }
             </div>
         </section>

@@ -13,7 +13,8 @@
     {"id":"11", "title":"TestPos11", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "3111 руб", "category": "Category5"},
     {"id":"12", "title":"TestPos12", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "6655 руб", "category": "Category3"},
     {"id":"13", "title":"TestPos13", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "1411 руб", "category": "Category6"},
-    {"id":"14", "title":"TestPos14", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "232 руб", "category": "Category3"}
+    {"id":"14", "title":"TestPos14", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "232 руб", "category": "Category3"},
+    {"id":"15", "title":"TestPos15", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "price": "122 руб", "category": "Category7"}
 
 ]
 
