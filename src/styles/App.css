@@ -1,28 +1,4 @@
-.Find-logo {
-    height: 25px;
-    max-width: 25px;
-}
-.DropDown-logo {
-    height: 25px;
-    max-width: 25px;
-}
-.App-header {
-    margin: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.RightHeaderSide {
-    height: 25px;
-    display: flex;
-    align-items: center;
-}
-.LeftHeaderSide {
-    height: 25px;
-    display: flex;
-    align-items: center;
-}
-.App-nav-bar {
+.App-header-bot {
     height: 40px;
     display: block;
     border-top: 1px solid lightgray;
@@ -31,6 +7,7 @@
     margin-bottom: 15px;
 }
 .Nav-container {
+    margin-right: 75px;
     height: 40px;
     display: flex;
     align-items: center;
@@ -48,8 +25,11 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
-a {
-    margin-right: 20px;
+.Nav-el{
+    margin-left: 75px;
+    text-decoration: none;
+    color: black;
+    margin-top: 15px;
 }
 .Nav-list::-webkit-scrollbar {
     display: none;
@@ -60,7 +40,8 @@ a {
     max-width: 120px;
 }
 .IndivPos {
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     position: relative;
     display: flex;
     -webkit-box-orient: horizontal;
@@ -91,15 +72,6 @@ a {
     -webkit-box-align: center;
     align-items: center;
 }
-.Nav-el{
-    margin-left: 20px;
-    text-decoration: none;
-    color: black;
-    margin-top: 15px;
-}
-.CategoryName{
-    margin-left: 20px;
-}
 .PriceText{
     margin-bottom: 5px;
 }
@@ -109,4 +81,55 @@ a {
 }
 .BodyText{
     font-size: 12px;
+}
+.PosByCat {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 30px;
+}
+.Positions {
+    margin-left: 75px;
+    margin-right: 75px;
+}
+.NavBarLg {
+    margin-left: 75px;
+    margin-right: 75px;
+}
+@media (max-width: 991px) {
+    .PosByCat {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .Nav-el {
+        margin-left: 50px;
+    }
+    .Positions {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    .NavBarLg {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    .Nav-container {
+        margin-right: 50px;
+    }
+}
+@media (max-width: 450px) {
+    .PosByCat {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .Nav-el {
+        margin-left: 20px;
+    }
+    .Positions {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .NavBarLg {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .Nav-container {
+        margin-right: 20px;
+    }
 }

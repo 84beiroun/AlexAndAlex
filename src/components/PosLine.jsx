@@ -1,7 +1,6 @@
 import React from "react";
-import imgPlaceholder from "F:/Programs/Projects/js/alex_v1/src/icons/Placeholder.png"
-import addIcon from "F:/Programs/Projects/js/alex_v1/src/icons/add.png"
-import "F:/Programs/Projects/js/alex_v1/src/styles/App.css"
+import imgPlaceholder from "../icons/Placeholder.png"
+import addIcon from "../icons/add.png"
 const PosLine = (props) => {
 
     return (
