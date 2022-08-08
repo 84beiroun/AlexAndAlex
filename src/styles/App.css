@@ -95,6 +95,10 @@
     margin-left: 75px;
     margin-right: 75px;
 }
+.navbar-toggler-icon {
+    height: 1em;
+    width: 1em;
+}
 @media (max-width: 991px) {
     .PosByCat {
         grid-template-columns: repeat(2, 1fr);
