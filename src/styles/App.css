@@ -92,12 +92,15 @@
     margin-right: 75px;
 }
 .NavBarLg {
-    margin-left: 75px;
-    margin-right: 75px;
+    padding-left: 75px;
+    padding-right: 75px;
 }
-.navbar-toggler-icon {
-    height: 1em;
-    width: 1em;
+
+.btn {box-shadow:none !important;
+    outline: none !important;}
+.btn-close {
+    box-shadow:none !important;
+    outline: none !important;
 }
 @media (max-width: 991px) {
     .PosByCat {
@@ -111,8 +114,8 @@
         margin-right: 50px;
     }
     .NavBarLg {
-        margin-left: 50px;
-        margin-right: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
     }
     .Nav-container {
         margin-right: 50px;
@@ -130,8 +133,8 @@
         margin-right: 20px;
     }
     .NavBarLg {
-        margin-left: 20px;
-        margin-right: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
     .Nav-container {
         margin-right: 20px;

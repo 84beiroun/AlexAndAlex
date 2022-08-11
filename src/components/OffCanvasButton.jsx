@@ -3,8 +3,10 @@ import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBasketShopping } from '@fortawesome/free-solid-svg-icons'
+import PosOrderCard from './PosOrderCard'
+import {forEach} from "react-bootstrap/ElementChildren";
 
-function OffCanvasButton({ name, ...props }) {
+function OffCanvasButton({ name, posOrder, ...props }) {
     const [showButton, setShowButton] = useState(false);
 
     const ButtonHandleClose = () => setShowButton(false);
@@ -17,12 +19,15 @@ function OffCanvasButton({ name, ...props }) {
             </Button>
             <Offcanvas show={showButton} onHide={ButtonHandleClose} {...props}>
                 <Offcanvas.Header closeButton>
-                    <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+                    <Offcanvas.Title>Cart</Offcanvas.Title>
                 </Offcanvas.Header>
-                <Offcanvas.Body>
-                    Some text as placeholder. In real life you can have the elements you
-                    have chosen. Like, text, images, lists, etc.
+                <Offcanvas.Body style={{paddingTop:0, paddingBottom: 0}}>
+                    {
+                     Array.from(posOrder.posOrder).map((pos, i) => <PosOrderCard pos={pos[1]} key={i}/>)
+                    //   posOrder.posOrder.map((pos, key) => <PosOrderCard key={key} pos={pos}/>)
+                    }
                 </Offcanvas.Body>
+                <div style={{background:"black", height:"200px"}}>a</div>
             </Offcanvas>
         </>
     );
