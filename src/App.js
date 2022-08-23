@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef} from 'react';
 import './styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PosLine from "./components/PosLine";
@@ -15,9 +15,9 @@ function App() {
 
     let addPos = (id, title, body, price) => {
         if (!posOrder.has(id)) {
-            posOrder.set(id, {title: title, body: body, price: price, count: 1});
+            posOrder.set(id, {id: id, title: title, body: body, price: price, count: 1});
         } else {
-            posOrder.set(id, {title: title, body: body, price: price, count: posOrder.get(id).count + 1})
+            posOrder.set(id, {id: id, title: title, body: body, price: price, count: posOrder.get(id).count + 1})
         }
     }
 

@@ -1,17 +1,25 @@
 import React from "react";
 import imgPlaceholder from "../icons/Placeholder.png"
-const PosOrderCard = (pos) => {
+import Button from "react-bootstrap/Button";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faRectangleXmark} from "@fortawesome/free-regular-svg-icons";
+const PosOrderCard = (props) => {
     return (
-        <div className="IndivPos">
+        <div className="IndivPosOrder">
             <img src={imgPlaceholder} className="PosImg" alt="position"/>
-            <div className="IndivPosData">
+            <div className="TopBotFlex">
                 <div className="IndivPosDataTop">
-                    <h3> {pos.pos.title} </h3>
-                    <p className="BodyText">{pos.pos.body}</p>
+                    <div className="LeftRightFlex">
+                        <h3> {props.pos.title} </h3>
+                        <Button onClick={()=> props.handler(props.pos.id)} variant={"outline"} style={{padding: 0}}>
+                            <FontAwesomeIcon icon={faRectangleXmark} style={{height: "1.2em", width: "1.2em"}}  />
+                        </Button>
+                    </div>
+                    <p className="BodyText">{props.pos.body}</p>
                 </div>
-                <div className="IndivPosDataBot">
-                    <p className="PriceText">{pos.pos.price + "₽ X " + pos.pos.count}</p>
-                    <p>{"price: " + pos.pos.price * pos.pos.count + "₽"}</p>
+                <div className="LeftRightFlex">
+                    <p className="PriceText">{props.pos.price + "₽ X " + props.pos.count}</p>
+                    <p className="PriceText">{"price: " + props.pos.price * props.pos.count + "₽"}</p>
                 </div>
             </div>
         </div>
