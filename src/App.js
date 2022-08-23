@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import PosLine from "./components/PosLine";
 import PosData from "./text_repo/positions.json"
 import NavScroll from "./components/NavScroll";
+let posOrder = new Map()
 
 function App() {
     const positions = PosData.sort(function (a, b) {
@@ -11,6 +12,15 @@ function App() {
         if (a.categoryID > b.categoryID) return 1;
         return 0;
     });
+
+    let addPos = (id, title, body, price) => {
+        if (!posOrder.has(id)) {
+            posOrder.set(id, {id: id, title: title, body: body, price: price, count: 1});
+        } else {
+            posOrder.set(id, {id: id, title: title, body: body, price: price, count: posOrder.get(id).count + 1})
+        }
+    }
+
     const uniquePos = [];
     positions.forEach(posData => {
         if (uniquePos.indexOf(posData.category)===-1){
@@ -28,7 +38,7 @@ function App() {
     const executeScroll = (event, i) => refToCategory[i].current.scrollIntoView()
   return (
     <div className="App">
-        <NavScroll/>
+        <NavScroll posOrder={posOrder}/>
         <div className="App-header-bot">
             <div className="Nav-container">
                 <div className="Nav-list">{
@@ -49,7 +59,7 @@ function App() {
                                 {
                                     if (category === posData.category) {
                                         return (
-                                            <PosLine pos={posData} key={posData.id}/>)
+                                            <PosLine pos={posData} handler={addPos} key={posData.id}/>)
                                     } else {
                                         return null
                                     }

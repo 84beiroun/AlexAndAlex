@@ -1,33 +1,39 @@
 import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import React from "react";
+import OffCanvasButton from './OffCanvasButton'
+import React, {useState} from "react";
+import Button from "react-bootstrap/Button";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faBars} from "@fortawesome/free-solid-svg-icons";
 
-function NavScroll() {
+function NavScroll(posOrder) {
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return (
-        <Navbar expand="lg" className="NavBarLg">
+        <>
+        <Navbar expand="false" className="NavBarLg" style={{background: "lightgray"}} sticky="top">
             <Container style={{padding: 0}} fluid>
-                <Navbar.Toggle aria-controls={`Navbar-expand-lg`} />
-                <Navbar.Offcanvas
-                    id={`Navbar-expand-lg`}
-                    aria-labelledby={`NavbarLabel-expand-lg`}
-                    placement="start"
-                >
+                <Button onClick={handleShow} variant={"outline"}>
+                    <FontAwesomeIcon icon={faBars} style={{height: "1.5em", width: "1.5em"}} />
+                </Button>
+                <Offcanvas show={show} onHide={handleClose} placement={'start'}>
                     <Offcanvas.Header closeButton>
-                        <Offcanvas.Title id={`NavbarLabel-expand-lg`}>
-                            Example Bar Name
-                        </Offcanvas.Title>
+                        <Offcanvas.Title>Offcanvas</Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
-                        <Nav className="justify-content-lg-start flex-grow-1 pe-3">
-                          NAVCONTENT
-                        </Nav>
+                        Some text as placeholder. In real life you can have the elements you
+                        have chosen. Like, text, images, lists, etc.
                     </Offcanvas.Body>
-                </Navbar.Offcanvas>
+                </Offcanvas>
                     <Navbar.Brand style={{margin: 0}} className="justify-content-lg-center">Example Bar Name</Navbar.Brand>
+                    <OffCanvasButton placement={'end'} name={'end'} posOrder={posOrder}/>
             </Container>
         </Navbar>
+        </>
     );
 }
 

@@ -33,12 +33,11 @@
 }
 .DropDown-menu ul {
     background-color: white;
-    margin: 20px;
+    padding: 20px;
     list-style-type: none;
-    padding: 0;
 
 }
 .Nav-contact-info {
     border-top: 1px solid lightgray;
-    margin-top: 40px;
+    padding-top: 40px;
 }
