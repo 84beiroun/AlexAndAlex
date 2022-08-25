@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
 
-function NavScroll(posOrder) {
+function NavScroll(props) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -16,7 +16,7 @@ function NavScroll(posOrder) {
     return (
         <>
         <Navbar expand="false" className="NavBarLg" style={{background: "lightgray"}} sticky="top">
-            <Container style={{padding: 0}} fluid>
+            <Container style={{paddingLeft: "20px", paddingRight:"20px"}} fluid>
                 <Button onClick={handleShow} variant={"outline"}>
                     <FontAwesomeIcon icon={faBars} style={{height: "1.5em", width: "1.5em"}} />
                 </Button>
@@ -30,7 +30,7 @@ function NavScroll(posOrder) {
                     </Offcanvas.Body>
                 </Offcanvas>
                     <Navbar.Brand style={{margin: 0}} className="justify-content-lg-center">Example Bar Name</Navbar.Brand>
-                    <OffCanvasButton placement={'end'} name={'end'} posOrder={posOrder}/>
+                    <OffCanvasButton placement={'end'} name={'end'} posOrder={props.posOrder} imgs={props.imgs}/>
             </Container>
         </Navbar>
         </>

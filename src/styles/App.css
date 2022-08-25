@@ -96,13 +96,6 @@
     padding-right: 75px;
 }
 
-.btn {box-shadow:none !important;
-    outline: none !important;}
-.btn-close {
-    box-shadow:none !important;
-    outline: none !important;
-}
-
 .IndivPosOrder {
     padding-bottom: 20px;
     position: relative;
@@ -121,6 +114,13 @@
     -webkit-box-direction: normal;
     flex-direction: column;
     justify-content: center;
+}
+
+.btn {box-shadow:none !important;
+    outline: none !important;}
+.btn-close {
+    box-shadow:none !important;
+    outline: none !important;
 }
 
 .OrderInfoInput *{

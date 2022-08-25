@@ -6,6 +6,15 @@ import PosData from "./text_repo/positions.json"
 import NavScroll from "./components/NavScroll";
 let posOrder = new Map()
 
+function importPosImgs(r)
+{
+    let images = {};
+    r.keys().forEach(item => { images[item.replace('./', '')] = r(item); });
+    return images;
+}
+
+const posImgs = importPosImgs(require.context("./assets/pos_imgs"))
+
 function App() {
     const positions = PosData.sort(function (a, b) {
         if (a.categoryID < b.categoryID) return -1;
@@ -38,7 +47,7 @@ function App() {
     const executeScroll = (event, i) => refToCategory[i].current.scrollIntoView()
   return (
     <div className="App">
-        <NavScroll posOrder={posOrder}/>
+        <NavScroll posOrder={posOrder} imgs={posImgs}/>
         <div className="App-header-bot">
             <div className="Nav-container">
                 <div className="Nav-list">{
@@ -59,7 +68,7 @@ function App() {
                                 {
                                     if (category === posData.category) {
                                         return (
-                                            <PosLine pos={posData} handler={addPos} key={posData.id}/>)
+                                            <PosLine imgs={posImgs} pos={posData} handler={addPos} key={posData.id}/>)
                                     } else {
                                         return null
                                     }

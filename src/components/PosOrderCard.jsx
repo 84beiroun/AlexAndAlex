@@ -1,12 +1,16 @@
 import React from "react";
-import imgPlaceholder from "../icons/Placeholder.png"
 import Button from "react-bootstrap/Button";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faRectangleXmark} from "@fortawesome/free-regular-svg-icons";
 const PosOrderCard = (props) => {
+    let image
+    if (props.imgs[props.pos.id + '.png'] != null)
+        image = props.imgs[props.pos.id + '.png']
+    else
+        image = props.imgs['Placeholder.png']
     return (
         <div className="IndivPosOrder">
-            <img src={imgPlaceholder} className="PosImg" alt="position"/>
+            <img src={image} className="PosImg" alt="position"/>
             <div className="TopBotFlex">
                 <div className="IndivPosDataTop">
                     <div className="LeftRightFlex">

@@ -7,23 +7,28 @@ import PosOrderCard from './PosOrderCard'
 import * as creds from '../credentials/credentials'
 import OrderInfo from "./OrderInfo";
 
-function OffCanvasButton({ name, posOrder, ...props }) {
+function OffCanvasButton({ ...props }) {
     const [showButton, setShowButton] = useState(false);
 
     const ButtonHandleClose = () => setShowButton(false);
     const ButtonHandleShow = () => setShowButton(true);
 
+    // eslint-disable-next-line
     const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
 
     let sum = 0
 
     let truePosOrder = []
-    for (const [key, value] of posOrder.posOrder){
+
+    // eslint-disable-next-line
+    for (const [key, value] of props.posOrder){
         truePosOrder.push(value)
     }
+
     let posReload = () => {
         truePosOrder.length = 0
-        for (const [key, value] of posOrder.posOrder){
+        // eslint-disable-next-line
+        for (const [key, value] of props.posOrder){
             truePosOrder.push(value)
         }
         forceUpdate();
@@ -31,14 +36,14 @@ function OffCanvasButton({ name, posOrder, ...props }) {
 
 
     let deletePos = (id) => {
-        for (const [key, value] of posOrder.posOrder){
+        for (const [key, value] of props.posOrder){
             if (key === id) {
-                posOrder.posOrder.get(key).count--
+                props.posOrder.get(key).count--
                 if (value.count === 0)
-                    posOrder.posOrder.delete(key)
+                    props.posOrder.delete(key)
             }
         }
-        console.log(posOrder.posOrder)
+        console.log(props.posOrder)
         posReload()
 
     }
@@ -64,10 +69,9 @@ function OffCanvasButton({ name, posOrder, ...props }) {
                         truePosOrder.map((pos, i) =>{
                             sum+=pos.price*pos.count;
                             return(
-                            <PosOrderCard pos={pos} handler={deletePos} key={i}/>
+                            <PosOrderCard pos={pos} handler={deletePos} imgs={props.imgs} key={i}/>
                             );
                         })
-
                     }
                 </Offcanvas.Body>
                     <div className="LeftRightFlex" style={{padding: "10px", marginBottom: 0, background: "lightblue"}}>
