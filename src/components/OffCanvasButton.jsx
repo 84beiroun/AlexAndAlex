@@ -7,7 +7,7 @@ import PosOrderCard from './PosOrderCard'
 import * as creds from '../credentials/credentials'
 import OrderInfo from "./OrderInfo";
 
-function OffCanvasButton({ ...props }) {
+function OffCanvasButton(props) {
     const [showButton, setShowButton] = useState(false);
 
     const ButtonHandleClose = () => setShowButton(false);
@@ -43,7 +43,6 @@ function OffCanvasButton({ ...props }) {
                     props.posOrder.delete(key)
             }
         }
-        console.log(props.posOrder)
         posReload()
 
     }
@@ -60,7 +59,7 @@ function OffCanvasButton({ ...props }) {
             <Button onClick={ButtonHandleShow} variant={"outline"}>
                 <FontAwesomeIcon icon={faBasketShopping} style={{height: "1.5em", width: "1.5em"}} />
             </Button>
-            <Offcanvas show={showButton} onHide={ButtonHandleClose} {...props}>
+            <Offcanvas show={showButton} onHide={ButtonHandleClose} name={props.name} placement={props.placement}>
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title>Cart</Offcanvas.Title>
                 </Offcanvas.Header>
