@@ -15,7 +15,7 @@ function NavScroll(props) {
 
     return (
         <>
-        <Navbar expand="false" className="NavBarLg" style={{background: "lightgray"}} sticky="top">
+        <Navbar id="navbar_top" expand="false" className="NavBarLg" style={{background: "white"}}>
             <Container style={{padding:0}} fluid>
                 <Button onClick={handleShow} variant={"outline"}>
                     <FontAwesomeIcon icon={faBars} style={{height: "1.5em", width: "1.5em"}} />

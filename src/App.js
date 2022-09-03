@@ -44,15 +44,44 @@ function App() {
             next.current.focus();
         }
     };
-    const executeScroll = (event, i) => refToCategory[i].current.scrollIntoView()
+    const executeScroll = (event, i) => {
+        event.preventDefault()
+        document.getElementById('navbar_top').classList.remove('fixed-top');
+        document.getElementById('navbar_bot').classList.remove('fixed-top');
+        refToCategory[i].current.scrollIntoView()
+    }
+    function scrollHandler() {
+        let lastScrollTop = 0
+        if (window.pageYOffset > 0)
+        {
+            document.getElementById('navbar_top').classList.remove('fixed-top');
+            document.getElementById('navbar_bot').classList.remove('fixed-top');
+        }
+            window.addEventListener('scroll', function() {
+                let state = window.scrollY
+                console.log(lastScrollTop)
+                console.log(state)
+                    if (state > lastScrollTop || lastScrollTop - state > 200 || state === 0) {
+                        document.getElementById('navbar_top').classList.remove('fixed-top');
+                        document.getElementById('navbar_bot').classList.remove('fixed-top');
+                    } else
+                    {
+                        document.getElementById('navbar_top').classList.add('fixed-top');
+                        document.getElementById('navbar_bot').classList.add('fixed-top');
+                    }
+                lastScrollTop = state
+            });
+    }
+
   return (
-    <div className="App">
+    <div className="App" onLoad={scrollHandler}>
         <NavScroll posOrder={posOrder} imgs={posImgs}/>
-        <div className="App-header-bot">
+        <div id="navbar_bot" className="App-header-bot fixed-top">
             <div className="Nav-container">
                 <div className="Nav-list">{
                     uniquePos
-                        .map((uniqueData, i) => <p className="Nav-el" key={i} onClick={(e) => executeScroll(e, i)}>{uniqueData}</p>)
+                        .map((uniqueData, i) => <div className="Nav-el" key={i}><p role="button" className="Nav-el-text" onClick={(e) =>
+                            executeScroll(e, i)}>{uniqueData}</p></div>)
                 }
                 </div>
             </div>
