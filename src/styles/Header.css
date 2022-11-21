@@ -2,21 +2,25 @@
     height: 25px;
     max-width: 25px;
 }
+
 .DropDown-logo {
     height: 25px;
     max-width: 25px;
 }
+
 .App-header-top {
     margin: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .RightHeaderSide {
     height: 25px;
     display: flex;
     align-items: center;
 }
+
 .LeftHeaderSide {
     height: 25px;
     display: flex;
@@ -28,15 +32,18 @@
     height: 667px;
     width: 375px;
 }
+
 .DropDown-menu.expanded {
     display: block;
 }
+
 .DropDown-menu ul {
     background-color: white;
     padding: 20px;
     list-style-type: none;
 
 }
+
 .Nav-contact-info {
     border-top: 1px solid lightgray;
     padding-top: 40px;

@@ -15,24 +15,25 @@ function NavScroll(props) {
 
     return (
         <>
-        <Navbar id="navbar_top" expand="false" className="NavBarLg" style={{background: "white"}}>
-            <Container style={{padding:0}} fluid>
-                <Button onClick={handleShow} variant={"outline"}>
-                    <FontAwesomeIcon icon={faBars} style={{height: "1.5em", width: "1.5em"}} />
-                </Button>
-                <Offcanvas show={show} onHide={handleClose} placement={'start'}>
-                    <Offcanvas.Header closeButton>
-                        <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-                    </Offcanvas.Header>
-                    <Offcanvas.Body>
-                        Some text as placeholder. In real life you can have the elements you
-                        have chosen. Like, text, images, lists, etc.
-                    </Offcanvas.Body>
-                </Offcanvas>
-                    <Navbar.Brand style={{margin: 0}} className="justify-content-lg-center">Example Bar Name</Navbar.Brand>
+            <Navbar id="navbar_top" expand="false" className="NavBarLg" style={{background: "white"}}>
+                <Container style={{padding: 0}} fluid>
+                    <Button onClick={handleShow} variant={"outline"}>
+                        <FontAwesomeIcon icon={faBars} style={{height: "1.5em", width: "1.5em"}}/>
+                    </Button>
+                    <Offcanvas show={show} onHide={handleClose} placement={'start'}>
+                        <Offcanvas.Header closeButton>
+                            <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+                        </Offcanvas.Header>
+                        <Offcanvas.Body>
+                            Some text as placeholder. In real life you can have the elements you
+                            have chosen. Like, text, images, lists, etc.
+                        </Offcanvas.Body>
+                    </Offcanvas>
+                    <Navbar.Brand style={{margin: 0}} className="justify-content-lg-center">Example Bar
+                        Name</Navbar.Brand>
                     <OffCanvasButton placement={'end'} name={'end'} posOrder={props.posOrder} imgs={props.imgs}/>
-            </Container>
-        </Navbar>
+                </Container>
+            </Navbar>
         </>
     );
 }

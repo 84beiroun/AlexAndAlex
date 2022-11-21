@@ -4,12 +4,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import PosLine from "./components/PosLine";
 import PosData from "./text_repo/positions.json"
 import NavScroll from "./components/NavScroll";
-let posOrder = new Map()
+import ScrollContainer from "react-indiana-drag-scroll";
 
-function importPosImgs(r)
-{
+let posOrder = new Map()
+function importPosImgs(r) {
     let images = {};
-    r.keys().forEach(item => { images[item.replace('./', '')] = r(item); });
+    r.keys().forEach(item => {
+        images[item.replace('./', '')] = r(item);
+    });
     return images;
 }
 
@@ -32,7 +34,7 @@ function App() {
 
     const uniquePos = [];
     positions.forEach(posData => {
-        if (uniquePos.indexOf(posData.category)===-1){
+        if (uniquePos.indexOf(posData.category) === -1) {
             uniquePos.push(posData.category)
         }
     });
@@ -40,7 +42,7 @@ function App() {
     const refToCategory = list.map(() => useRef(null));
     const setRefToCategory = idx => () => {
         const next = refToCategory[idx + 1];
-        if(next){
+        if (next) {
             next.current.focus();
         }
     };
@@ -50,65 +52,67 @@ function App() {
         document.getElementById('navbar_bot').classList.remove('fixed-top');
         refToCategory[i].current.scrollIntoView()
     }
+
     function scrollHandler() {
         let lastScrollTop = 0
-        if (window.pageYOffset > 0)
-        {
+        if (window.pageYOffset > 0) {
             document.getElementById('navbar_top').classList.remove('fixed-top');
             document.getElementById('navbar_bot').classList.remove('fixed-top');
         }
-            window.addEventListener('scroll', function() {
-                let state = window.scrollY
-                console.log(lastScrollTop)
-                console.log(state)
-                    if (state > lastScrollTop || lastScrollTop - state > 200 || state === 0) {
-                        document.getElementById('navbar_top').classList.remove('fixed-top');
-                        document.getElementById('navbar_bot').classList.remove('fixed-top');
-                    } else
-                    {
-                        document.getElementById('navbar_top').classList.add('fixed-top');
-                        document.getElementById('navbar_bot').classList.add('fixed-top');
-                    }
-                lastScrollTop = state
-            });
+        window.addEventListener('scroll', function () {
+            let state = window.scrollY
+            if (state > lastScrollTop || lastScrollTop - state > 200 || state === 0) {
+                document.getElementById('navbar_top').classList.remove('fixed-top');
+                document.getElementById('navbar_bot').classList.remove('fixed-top');
+            } else {
+                document.getElementById('navbar_top').classList.add('fixed-top');
+                document.getElementById('navbar_bot').classList.add('fixed-top');
+            }
+            lastScrollTop = state
+        });
     }
 
-  return (
-    <div className="App" onLoad={scrollHandler}>
-        <NavScroll posOrder={posOrder} imgs={posImgs}/>
-        <div id="navbar_bot" className="App-header-bot fixed-top">
-            <div className="Nav-container">
-                <div className="Nav-list">{
-                    uniquePos
-                        .map((uniqueData, i) => <div className="Nav-el" key={i}><p role="button" className="Nav-el-text" onClick={(e) =>
-                            executeScroll(e, i)}>{uniqueData}</p></div>)
-                }
+    return (
+        <div className="App" onLoad={scrollHandler}>
+            <NavScroll posOrder={posOrder} imgs={posImgs}/>
+            <div id="navbar_bot" className="App-header-bot">
+                <div className="Nav-container">
+                        <ScrollContainer className="Nav-list">
+                        {
+                            uniquePos
+                                .map((uniqueData, i) => <div className="Nav-el" key={i}><p role="button"
+                                                                                           className="Nav-el-text"
+                                                                                           onClick={(e) =>
+                                                                                               executeScroll(e, i)}>{uniqueData}</p>
+                                </div>)
+                        }
+                        </ScrollContainer>
                 </div>
             </div>
-        </div>
             <div className="Positions">{
                 uniquePos
                     .map((category, i) => <div key={i}>
-                       <h2 className="CategoryName" ref={refToCategory[i]} onChange={setRefToCategory(i)} id={"category" + i}>{category}</h2>
+                        <h2 className="CategoryName" ref={refToCategory[i]} onChange={setRefToCategory(i)}
+                            id={"category" + i}>{category}</h2>
                         <div className="PosByCat">
-                        {
-                            positions
-                                .map((posData) =>
-                                {
-                                    if (category === posData.category) {
-                                        return (
-                                            <PosLine imgs={posImgs} pos={posData} handler={addPos} key={posData.id}/>)
-                                    } else {
-                                        return null
-                                    }
-                                })
-                        }
+                            {
+                                positions
+                                    .map((posData) => {
+                                        if (category === posData.category) {
+                                            return (
+                                                <PosLine imgs={posImgs} pos={posData} handler={addPos}
+                                                         key={posData.id}/>)
+                                        } else {
+                                            return null
+                                        }
+                                    })
+                            }
                         </div>
                     </div>)
             }
             </div>
-    </div>
-  );
+        </div>
+    );
 }
 
 export default App;

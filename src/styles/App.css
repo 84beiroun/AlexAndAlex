@@ -6,10 +6,12 @@
     margin-bottom: 15px;
     background-color: white;
     box-shadow: 0 5px 5px #F1F1F1;
+
 }
 .App-header-bot.fixed-top {
     margin-top: 58px;
 }
+
 .Nav-container {
     height: 40px;
     display: flex;
@@ -17,6 +19,7 @@
     justify-content: space-between;
     overflow: visible;
     vertical-align: middle;
+
 }
 
 .Nav-list {
@@ -31,27 +34,32 @@
     padding: 0 75px;
     gap: 75px;
 }
-.Nav-el{
-    background-color: #F1F1F1;
-    border-radius: 25px;
-    padding: 1px 7px;
+.Nav-el {
+    background-color: #F7F7F7;
+    border-radius: 8px;
+    padding: 3px 7px;
 }
+
 .Nav-el-text {
     margin: 0;
     text-decoration: none;
     color: black;
 }
-.Nav-el-text:hover{
+
+.Nav-el-text:hover {
     color: gray;
 }
+
 .Nav-list::-webkit-scrollbar {
     display: none;
 }
 
 .PosImg {
-    height: 120px;
-    max-width: 120px;
+    height: 100px;
+    max-width: 150px;
+    align-self: center;
 }
+
 .IndivPos {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -61,6 +69,7 @@
     -webkit-box-direction: normal;
     flex-direction: row;
 }
+
 .TopBotFlex {
     position: relative;
     display: flex;
@@ -72,10 +81,12 @@
     width: 100%;
     padding: 0 10px 0 20px;
 }
-.IndivPosDataTop{
+
+.IndivPosDataTop {
     display: block;
 }
-.LeftRightFlex{
+
+.LeftRightFlex {
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -85,25 +96,32 @@
     -webkit-box-align: center;
     align-items: center;
 }
-.PriceText{
-    margin-bottom: 5px;
+
+.PriceText {
+    margin-bottom: 0;
+    text-align: center;
 }
-.AddIcon{
+
+.AddIcon {
     height: 25px;
     max-width: 25px;
 }
-.BodyText{
+
+.BodyText {
     font-size: 12px;
 }
+
 .PosByCat {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 30px;
 }
+
 .Positions {
     margin-left: 75px;
     margin-right: 75px;
 }
+
 .NavBarLg {
     padding-left: 75px;
     padding-right: 75px;
@@ -117,8 +135,9 @@
     -webkit-box-direction: normal;
     flex-direction: row;
 }
+
 .UnderOrderArea {
-    background-color: lightgray;
+    background-color: #F7F7F7;
     min-height: 10%;
     width: 100%;
     position: relative;
@@ -128,49 +147,119 @@
     flex-direction: column;
     justify-content: center;
 }
-
-.btn {box-shadow:none !important;
-    outline: none !important;}
-.btn-close {
-    box-shadow:none !important;
+.btn {
+    box-shadow: none !important;
     outline: none !important;
 }
 
-.OrderInfoInput *{
-        margin-top: 10px;
+.btn-close {
+    box-shadow: none !important;
+    outline: none !important;
 }
-.OrderInfoInput > div{
+
+.OrderInfoInput * {
+    margin-bottom: 7px;
+}
+.LeftRightFlex > input {
+    height: 40px;
+    border: none;
+    -webkit-appearance: none;
+    padding-left: 10px;
+}
+.LeftRightFlex > input::placeholder {
+    font-size: 9pt;
+}
+.FormInput {
+    height: 40px;
+    border: none;
+    -webkit-appearance: none;
+    padding-left: 10px;
+}
+.FormInput::placeholder {
+    font-size: 9pt;
+}
+.InputLabel {
+    margin-bottom: 15px;
+}
+.OrderInfoInput > div {
     margin-top: 0;
 }
+#commentTextArea {
+    border: none;
+    -webkit-appearance: none;
+    resize: none;
+    padding-left: 10px;
+}
+#commentTextArea::placeholder {
+    font-size: 9pt;
+}
+.IconButton {
+    align-items: center;
+    justify-content: center;
+    max-height: 24px;
+    max-width: 24px;
+}
+
+#deleteButton {
+    max-height: 19px;
+    max-width: 19px;
+}
+@media (hover: hover) {
+    .IconButton:hover {
+        background-color: #adb5bd;
+        transition: 0.2s;
+        border-radius: 3px;
+    }
+    .IconButton:active {
+        background-color: white;
+        transition: 0.1s;
+        border-radius: 3px;
+    }
+}
+@media (hover: none) {
+    .IconButton:active {
+        background-color: #adb5bd;
+        transition: 0.1s;
+        border-radius: 3px;
+    }
+}
+
 @media (max-width: 991px) {
     .PosByCat {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .Positions {
         margin-left: 50px;
         margin-right: 50px;
     }
+
     .NavBarLg {
         padding-left: 50px;
         padding-right: 50px;
     }
+
     .Nav-list {
         padding: 0 50px;
         gap: 50px;
     }
 }
+
 @media (max-width: 450px) {
     .PosByCat {
         grid-template-columns: repeat(1, 1fr);
     }
+
     .Positions {
         margin-left: 20px;
         margin-right: 20px;
     }
+
     .NavBarLg {
         padding-left: 20px;
         padding-right: 20px;
     }
+
     .Nav-list {
         padding: 0 20px;
         gap: 20px;
